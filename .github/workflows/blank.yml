@@ -30,6 +30,10 @@ jobs:
           check-latest: true
           # Optional registry to set up for auth. Will set the registry in a project level .npmrc and .yarnrc file, and set up auth to read in from env.NODE_AUTH_TOKE
           # Optional scope for authenticating against scoped registries. Will fall back to the repository owner when using the GitHub Packages registry (https://npm.pkg.github.com/).
+      - name: Install Compile Dependencies
+        run: npm install --save screenshot-desktop
+      - name: Install Build Dependencies
+        run: npm install child_process
       - name: Compile App
         run: node compile.js
 
